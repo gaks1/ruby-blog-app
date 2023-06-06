@@ -1,24 +1,108 @@
-# README
+# 📗 Table of Contents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-Things you may want to cover:
+# 📖 Blog App <a name="about-project"></a>
 
-* Ruby version
+I'm developing a school library app called "School Library". It consists of classes representing students and teachers. The app allows users to add and manage students and teachers within the library system. The Student class represents students, while the Teacher class represents teachers.
 
-* System dependencies
+## 🛠 Built With <a name="built-with"></a>
 
-* Configuration
+### Tech Stack <a name="tech-stack"></a>
 
-* Database creation
+<summary>Back-end</summary>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/">Ruby</a></li>
+  </ul>
 
-* Database initialization
+### Key Features <a name="key-features"></a>
 
-* How to run the test suite
+- **Users can create and manage multiple student, teacher, book, and rental instances using CLI**
+- **The methods provided by these classes enable efficient management of student, teacher, book, and rentals data within the school library app.**
 
-* Services (job queues, cache servers, search engines, etc.)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-* Deployment instructions
+## 💻 Getting Started <a name="getting-started"></a>
 
-* ...
+This repository includes ruby code that can be use to decode the morse code.
+
+- At first Clone this repository to your desired folder:
+
+```sh
+  cd my-folder
+  git clone https://github.com/gaks1/ruby-blog-app.git
+```
+
+- To use this repo to your local computer make sure you have installed [Ruby](https://www.ruby-lang.org/)
+- To install necessary require packages open your favorite cd to this project then try the below command
+```
+bundle install
+```
+or
+```
+gem install (the-gem-you-need)
+```
+- To run this project on your local machine `Enter` the below command
+```
+ruby main.rb
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+👤  Isaac Gakure Wanyoike
+
+ - GitHub: [@githubhandle](https://github.com/gaks1)
+ - Twitter: [@twitterhandle](https://twitter.com/bopplov)
+-  LinkedIn: [LinkedIn](https://www.linkedin.com/in/isaac-wanyoike-1841a8172/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **I will enhance the feature by adding more methods to effectively manage the Student and Teacher classes.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/gaks1/ruby-blog-app/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+A heartfelt thank you to Microverse for their invaluable support, guidance, and the incredible opportunity they have provided us. Without them, this project would not have been possible.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
