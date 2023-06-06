@@ -54,6 +54,7 @@ This repository includes ruby code that can be use to decode the morse code.
 - To install necessary require packages open your favorite cd to this project then try the below command
 ```
 bundle install
+npm i
 ```
 or
 ```
