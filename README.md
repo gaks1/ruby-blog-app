@@ -1,3 +1,7 @@
+<div align="center">
+  <h1><b>Blog App</b></h1>
+</div>
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -5,67 +9,113 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Blog App <a name="about-project"></a>
 
-I'm developing a school library app called "School Library". It consists of classes representing students and teachers. The app allows users to add and manage students and teachers within the library system. The Student class represents students, while the Teacher class represents teachers.
+# 📖 [Blog App] <a name="about-project"></a>
+
+**Blog App** is a web application for users to write and share blog posts, comment on posts, and like posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-<summary>Back-end</summary>
+<details>
+  <summary>Server</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/">Ruby</a></li>
+    <li><a href="https://guides.rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-- **Users can create and manage multiple student, teacher, book, and rental instances using CLI**
-- **The methods provided by these classes enable efficient management of student, teacher, book, and rentals data within the school library app.**
+- **User Authentication**: Users can create accounts, log in, and log out.
+- **Create and Publish Posts**: Users can create new blog posts and publish them.
+- **Comment and Like**: Users can comment on posts and like their favorite posts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- GETTING STARTED -->
+
 ## 💻 Getting Started <a name="getting-started"></a>
+To get a local copy up and running, follow these steps.
 
-This repository includes ruby code that can be use to decode the morse code.
+### Prerequisites
 
-- At first Clone this repository to your desired folder:
+In order to run this project you need:
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+- Any web browser
+
+### Setup
+
+Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
   git clone https://github.com/gaks1/ruby-blog-app.git
 ```
 
-- To use this repo to your local computer make sure you have installed [Ruby](https://www.ruby-lang.org/)
-- To install necessary require packages open your favorite cd to this project then try the below command
+### Install
+
+Install this project with:
+
+```sh
+  cd my-project
+  bundle install
 ```
-bundle install
+
+or 
+
 ```
-or
+gem install
 ```
-gem install (the-gem-you-need)
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
 ```
-- To run this project on your local machine `Enter` the below command
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+    bin/rails rspec spec
 ```
-ruby main.rb
+
+### Deployment
+
+You can deploy this project using:
+
+```sh
+To deploy the application, you can follow the deployment instructions specific to your chosen hosting platform.
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- AUTHORS -->
 ## 👥 Authors <a name="authors"></a>
 👤  Isaac Gakure Wanyoike
 
@@ -75,11 +125,17 @@ ruby main.rb
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **I will enhance the feature by adding more methods to effectively manage the Student and Teacher classes.**
+- [ ] **[User Permissions]**
+- [ ] **[User Authentication]**
+- [ ] **[RESTFull API]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -87,7 +143,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/gaks1/ruby-blog-app/issues).
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
