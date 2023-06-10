@@ -52,36 +52,40 @@ describe Post, type: :model do
 
   it 'should increment user post_counter on create automatically' do
     test_user = User.create(name: 'Tom', post_counter: 0)
-    test_post = Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0, likes_counter: 0)
+    Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0,
+                likes_counter: 0)
 
     expect(test_user.post_counter).to eq(1)
   end
 
   it 'should increment post comments_counter on create automatically' do
     test_user = User.create(name: 'Tom', post_counter: 0)
-    test_post = Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0, likes_counter: 0)
-    test_comment = Comment.create(author: test_user, post: test_post, text: 'This is a comment')
+    test_post = Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0,
+                            likes_counter: 0)
+    Comment.create(author: test_user, post: test_post, text: 'This is a comment')
 
     expect(test_post.comments_counter).to eq(1)
   end
 
   it 'should increment post likes_counter on create automatically' do
     test_user = User.create(name: 'Tom', post_counter: 0)
-    test_post = Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0, likes_counter: 0)
-    test_likes = Like.create(post: test_post, author: test_user)
+    test_post = Post.create(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0,
+                            likes_counter: 0)
+    Like.create(post: test_post, author: test_user)
 
     expect(test_post.likes_counter).to eq(1)
   end
 
   it 'post should return top 5 post' do
     test_user = User.create!(name: 'Tom', post_counter: 0)
-    test_post = Post.create!(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0, likes_counter: 0)
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 1' )
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 2' )
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 3' )
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 4' )
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 5' )
-    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 6' )
+    test_post = Post.create!(author: test_user, title: 'Hello', text: 'This is a post', comments_counter: 0,
+                             likes_counter: 0)
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 1')
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 2')
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 3')
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 4')
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 5')
+    Comment.create!(author: test_user, post: test_post, text: 'This is a comment 6')
 
     expect(test_post.recent_comments.size).to eq(5)
     expect(test_post.recent_comments[0].text).to eq('This is a comment 6')
@@ -90,5 +94,4 @@ describe Post, type: :model do
     expect(test_post.recent_comments[3].text).to eq('This is a comment 3')
     expect(test_post.recent_comments[4].text).to eq('This is a comment 2')
   end
-
 end
