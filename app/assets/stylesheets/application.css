@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+.user-index{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+}
+
+.user-index img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #e1e1e1;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+.usr-inx-div{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.usr-inx-div p{
+    display: flex;
+    align-items: flex-end;
+}
+
+.user-bio{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+}
+
+.user-posts{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+}
+
+.usr-com-lik-counter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap:5px;
+}
+
+.user-comments{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+}
+
+.usr-posts-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.div-button{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    cursor: pointer;
+}
