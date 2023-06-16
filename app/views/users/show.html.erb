@@ -1,1 +1,27 @@
-<h1>List a given user</h1>
+<div class="user-index">
+    <img src="<%= @user.photo %>" alt="user photo">
+    <div class="usr-inx-div">
+    <h1><%= @user.name %></h1>
+    <p>Number of posts: <%= @user.post_counter %> </p>
+    </div>
+</div>
+<div class="user-bio">
+<p>bio</p>
+    <p><%= @user.bio %></p>
+</div>
+<% counter = 0 %>
+<% @posts.each do |post| %>
+    <div class="user-posts">
+      <p>Post<%= '#' %><%= counter += 1 %></p>
+      <p><%= post.id %></p>
+      <p><%= post.text %></p>
+      <div class="usr-com-lik-counter">
+      <p>comments: <%= post.comments_counter %></p>
+      <p>likes: <%= post.likes_counter %></p>
+      </div>
+    </div>
+<% end %>
+
+<div class="div-button">
+<%= link_to 'see all posts', user_posts_path(user_id: @user.id), class:"button"%>
+</div>
