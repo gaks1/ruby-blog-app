@@ -1,1 +1,16 @@
-<h1>List a given post</h1>
+<div class="user-posts">
+      <div class="usr-posts-title">
+      <p>Post<%= '#1' %></p>
+      <div class="usr-com-lik-counter">
+      <p>comments: <%= @post.comments_counter %></p>
+      <p>likes: <%= @post.likes_counter %></p>
+      </div>
+      </div>
+      <p><%= @post.id %></p>
+      <p><%= @post.text %></p>
+    </div>
+    <div class="user-comments">
+    <% @comments.each do |comment| %>
+      <p><%= comment.author.name %> : <%= comment.text %></p>
+    <% end %>
+  </div>

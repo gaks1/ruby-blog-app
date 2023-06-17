@@ -1,1 +1,27 @@
-<h1>List all posts for a given user</h1>
+<div class="user-index">
+    <img src="<%= @user.photo %>" alt="user photo">
+    <div class="usr-inx-div">
+    <h1><%= @user.name %></h1>
+    <p>Number of posts: <%= @user.post_counter %> </p>
+    </div>
+</div>
+
+<% counter = 0 %>
+<% @posts.each do |post| %>
+  <%= link_to user_post_path(user_id: @user.id, id: post.id) do %>
+    <div class="user-posts">
+      <p>Post<%= '#' %><%= counter += 1 %></p>
+      <p><%= post.id %></p>
+      <p><%= post.text %></p>
+      <div class="usr-com-lik-counter">
+      <p>comments: <%= post.comments_counter %></p>
+      <p>likes: <%= post.likes_counter %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="user-comments">
+    <% post.recent_comments.each do |comment| %>
+      <p><%= comment.author.name %> : <%= comment.text %></p>
+    <% end %>
+  </div>
+<% end %>
