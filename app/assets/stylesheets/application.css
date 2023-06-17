@@ -101,7 +101,7 @@ a {
   cursor: pointer;
 }
 
-.user-form{
+.user-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -110,11 +110,11 @@ a {
   border: 1px solid #e1e1e1;
 }
 
-.pst-btn{
+.pst-btn {
   width: 100px;
 }
 
-.user-comment{
+.user-comment {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -123,6 +123,6 @@ a {
   border: 1px solid #e1e1e1;
 }
 
-.cmt-btn{
+.cmt-btn {
   width: 150px;
 }
