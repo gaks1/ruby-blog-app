@@ -113,3 +113,16 @@ a {
 .pst-btn{
   width: 100px;
 }
+
+.user-comment{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+}
+
+.cmt-btn{
+  width: 150px;
+}
