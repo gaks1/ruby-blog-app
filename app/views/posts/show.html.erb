@@ -7,6 +7,7 @@
       </div>
       </div>
       <p><%= @post.id %></p>
+      <p><%= @post.title %></p>
       <p><%= @post.text %></p>
       <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
         <%= f.submit "Like" %>

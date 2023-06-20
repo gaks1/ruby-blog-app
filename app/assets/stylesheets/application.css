@@ -126,3 +126,9 @@ a {
 .cmt-btn {
   width: 150px;
 }
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

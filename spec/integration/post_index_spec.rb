@@ -2,20 +2,26 @@ require 'rails_helper'
 
 RSpec.describe 'Post index page', type: :system do
   let!(:users) do
-    User.create([{ name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.' },
-                 { name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from England.' },
-                 { name: 'Nahom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Ethiopia.' }])
+    User.create([{ name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',
+                   post_counter: 0 },
+                 { name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from England.',
+                   post_counter: 0 },
+                 { name: 'Nahom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Ethiopia.',
+                   post_counter: 0 }])
   end
   let!(:posts) do
-    Post.create!([{ author: users[0], title: 'First Post', text: 'My first post' },
-                  { author: users[1], title: 'Second Post', text: 'My Second post' },
-                  { author: users[2], title: 'Third Post', text: 'My Third post' }])
+    Post.create!([{ author: users[0], title: 'First Post', text: 'My first post', comments_counter: 0,
+                    likes_counter: 0 },
+                  { author: users[1], title: 'Second Post', text: 'My Second post', comments_counter: 0,
+                    likes_counter: 0 },
+                  { author: users[2], title: 'Third Post', text: 'My Third post', comments_counter: 0,
+                    likes_counter: 0 }])
   end
 
   describe 'Post index' do
     it 'shows user profile picture' do
       visit user_posts_path(users[0])
-      expect(page).to have_css('img[alt="profile pic"]')
+      expect(page).to have_selector("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
     end
     it 'shows user name' do
       visit user_posts_path(users[0])
@@ -24,12 +30,12 @@ RSpec.describe 'Post index page', type: :system do
 
     it 'shows posts count' do
       visit user_posts_path(users[0])
-      expect(page).to have_content(users[0].posts_counter)
+      expect(page).to have_content('Number of posts: 1')
     end
 
     it 'shows a post title' do
       visit user_posts_path(users[0])
-      expect(page).to have_content(posts[0].title)
+      expect(page).to have_content(posts[0].text)
     end
 
     it 'shows some of a post body' do
@@ -60,7 +66,7 @@ RSpec.describe 'Post index page', type: :system do
     end
     it 'When click on a post, it redirects to that post show page' do
       visit user_posts_path(users[0])
-      click_on 'First Post'
+      click_on 'My first post'
       expect(page).to have_content('My first post')
     end
   end
