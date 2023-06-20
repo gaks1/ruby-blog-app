@@ -64,19 +64,15 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
-end
-
 gem 'dotenv-rails', groups: %i[development test]
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
+  gem 'capybara'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 gem 'rails-controller-testing'
