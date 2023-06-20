@@ -35,7 +35,7 @@ RSpec.describe 'User page', type: :system do
 
       @user1.recent_posts.each do |post|
         expect(page).to have_content(post.text)
-end
+      end
     end
 
     it 'user clicks on post name and goes to post page First user' do
@@ -53,7 +53,7 @@ end
       expect(page).to have_content(@user1.name)
       @user1.posts.each do |post|
         expect(page).to have_content(post.text)
-end
+      end
     end
 
     it 'shows user second user' do
@@ -66,7 +66,7 @@ end
 
       @user2.recent_posts.each do |post|
         expect(page).to have_content(post.text)
-end
+      end
     end
 
     it 'user clicks on post name and goes to post page Second user' do
@@ -84,7 +84,7 @@ end
       expect(page).to have_current_path user_posts_path(@user2)
       @user2.posts.each do |post|
         expect(page).to have_content(post.text)
-end
+      end
     end
   end
 end
