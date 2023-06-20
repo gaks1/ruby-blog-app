@@ -37,6 +37,7 @@ RSpec.describe 'User page', type: :system do
     it 'user clicks on first user name and goes to user page' do
       visit users_path
       click_on @user1.name
+      expect(page).to have_current_path user_path(@user1)
       expect(page).to have_content(@user1.name)
       expect(page).to have_content(@user1.bio)
     end
@@ -44,6 +45,7 @@ RSpec.describe 'User page', type: :system do
     it 'user clicks on second user name and goes to user page' do
       visit users_path
       click_on @user2.name
+      expect(page).to have_current_path user_path(@user2)
       expect(page).to have_content(@user2.name)
       expect(page).to have_content(@user2.bio)
     end

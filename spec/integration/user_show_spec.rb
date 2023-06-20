@@ -33,27 +33,27 @@ RSpec.describe 'User page', type: :system do
       expect(page).to have_content('Number of posts: 4')
       expect(page).to have_link('see all posts')
 
-      expect(page).to have_no_content('This is a post')
-      expect(page).to have_content('This is another post')
-      expect(page).to have_content('This is another another post')
-      expect(page).to have_content('This is another another another post')
+      @user1.recent_posts.each do |post|
+        expect(page).to have_content(post.text)
+end
     end
 
     it 'user clicks on post name and goes to post page First user' do
       visit user_path(@user1)
       expect(page).to have_content('Post#1')
       click_link('Post#1')
+      expect(page).to have_current_path user_post_path(@user1, @post7)
       expect(page).to have_content('This is another another another post')
     end
 
     it 'user clicks on see all posts button and goes to user posts page first user' do
       visit user_path(@user1)
       click_on 'see all posts'
+      expect(page).to have_current_path user_posts_path(@user1)
       expect(page).to have_content(@user1.name)
-      expect(page).to have_content('This is a post')
-      expect(page).to have_content('This is another post')
-      expect(page).to have_content('This is another another post')
-      expect(page).to have_content('This is another another another post')
+      @user1.posts.each do |post|
+        expect(page).to have_content(post.text)
+end
     end
 
     it 'shows user second user' do
@@ -64,16 +64,16 @@ RSpec.describe 'User page', type: :system do
       expect(page).to have_content('Number of posts: 4')
       expect(page).to have_link('see all posts')
 
-      expect(page).to have_no_content('This is a post')
-      expect(page).to have_content('This is another post')
-      expect(page).to have_content('This is another another post')
-      expect(page).to have_content('This is another another another post')
+      @user2.recent_posts.each do |post|
+        expect(page).to have_content(post.text)
+end
     end
 
     it 'user clicks on post name and goes to post page Second user' do
       visit user_path(@user2)
       expect(page).to have_content('Post#1')
       click_link('Post#1')
+      expect(page).to have_current_path user_post_path(@user2, @post8)
       expect(page).to have_content('This is another another another post')
     end
 
@@ -81,10 +81,10 @@ RSpec.describe 'User page', type: :system do
       visit user_path(@user2)
       click_on 'see all posts'
       expect(page).to have_content(@user2.name)
-      expect(page).to have_content('This is a post')
-      expect(page).to have_content('This is another post')
-      expect(page).to have_content('This is another another post')
-      expect(page).to have_content('This is another another another post')
+      expect(page).to have_current_path user_posts_path(@user2)
+      @user2.posts.each do |post|
+        expect(page).to have_content(post.text)
+end
     end
   end
 end

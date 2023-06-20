@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Post index page', type: :system do
+RSpec.describe 'Post index page', type: :feature do
   let!(:users) do
     User.create([{ name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',
                    post_counter: 0 },
@@ -35,7 +35,7 @@ RSpec.describe 'Post index page', type: :system do
 
     it 'shows a post title' do
       visit user_posts_path(users[0])
-      expect(page).to have_content(posts[0].text)
+      expect(page).to have_content(posts[0].title)
     end
 
     it 'shows some of a post body' do
@@ -67,6 +67,7 @@ RSpec.describe 'Post index page', type: :system do
     it 'When click on a post, it redirects to that post show page' do
       visit user_posts_path(users[0])
       click_on 'My first post'
+      expect(page).to have_current_path user_post_path(users[0], posts[0])
       expect(page).to have_content('My first post')
     end
   end
